@@ -11,15 +11,29 @@ int main()
 {   
     int n,m;
     cin>>n>>m;
-    vi actual(n);
-    vi maximum(m);
+    multiset<int>st;
     for(int i = 0;i<n;i++){
-        cin>>actual[i];
+        int a;
+        cin>>a;
+        st.insert(a);
     }
-    for(int i = 0;i<m;i++){
-        cin>>maximum[i];
+
+    for(int j = 0;j<m;j++){
+        int a;
+        cin>>a;
+        auto it = st.upper_bound(a);
+        if(it==st.begin()){
+            cout<<-1<<endl;
+        }
+        else{
+            it--;
+            cout<<*(it)<<endl;
+            st.erase(it);
+        }
     }
-    
-    
     return 0;
 }
+/*
+
+
+*/
