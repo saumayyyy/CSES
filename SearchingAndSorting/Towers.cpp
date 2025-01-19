@@ -8,7 +8,7 @@ typedef vector<ll> vll;
 typedef pair<int,int> pii;
 
 void placeCube(vi& tower_tops,int target){
-    int s = 0, e = tower_tops.size();
+    int s = 0, e = tower_tops.size()-1;
     int correct_tower = e;
     while(s<=e){
         int mid = s+(e-s)/2;
